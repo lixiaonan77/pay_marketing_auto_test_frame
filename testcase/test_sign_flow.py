@@ -7,7 +7,7 @@ with open("./data/sign_data.yaml","r",encoding="utf-8") as f:
 @allure.feature("用户模块")
 @allure.story("每日签到+积分获取流程")
 class TestSignBusiness:
-    def test_user_sign_add_score(self,gloabal_headers,params):
+    def test_user_sign_add_score(self,global_headers,params):
         """
         业务流程：
         1.用户执行每日签到
