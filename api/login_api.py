@@ -1,5 +1,6 @@
 from common.http_request import http
-from config.setting import env,login_user
+from config.setting import env, login_user
+
 
 class LoginApi:
     #登录接口：全局获取token

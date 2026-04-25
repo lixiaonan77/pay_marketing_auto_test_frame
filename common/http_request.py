@@ -3,8 +3,8 @@ import requests
 class HttpRequest:
     def __init__(self):
     #保持会话自动携带cookie
-    self.session = requests.Session() #让后端识别是同一个客户端、不拦截、链路连贯、请求稳定
-    def send(self,method.url.headers=None,json=None):
+        self.session = requests.Session() #让后端识别是同一个客户端、不拦截、链路连贯、请求稳定
+    def send(self,method,url,headers=None,json=None):
         """
         :param method:请求方式 GET/POST
         :param url:接口地址
