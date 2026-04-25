@@ -15,5 +15,5 @@ retry:
 #MQ配置
 mq:
   host: "127.0.0.1"
-  port: 3672
+  port: 5672
   queue_name: "pay_order_status_queue" #支付状态同步队列
