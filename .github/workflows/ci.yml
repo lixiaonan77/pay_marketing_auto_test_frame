@@ -1,4 +1,5 @@
-name: 自动化定时回归任务
+name: CI
+
 on:
   push:
     branches: [main]
@@ -8,6 +9,15 @@ on:
 jobs:
   auto_test:
     runs-on: ubuntu-latest
+
+    # 添加 services 段，启动 RabbitMQ 容器
+    services:
+      rabbitmq:
+        image: rabbitmq:3-management
+        ports:
+          - 5672:5672
+        options: --health-cmd "rabbitmqctl status" --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
       - name: 拉取项目代码
         uses: actions/checkout@v4

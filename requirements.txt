@@ -9,3 +9,4 @@ allure-combine==1.0.11
 pyyaml==6.0
 tenacity==8.2.2
 openpyxl
+pika>=1.2.0

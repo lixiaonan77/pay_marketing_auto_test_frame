@@ -9,7 +9,7 @@ class MqConnect:
     def __init__(self):
         #MQ连接参数
         host = mq.get("host", "127.0.0.1")
-        port = mq.get("port", 5672)
+        port = mq.get("port", 3672)
         self.params = pika.ConnectionParameters(host=host, port=port)
         self.connection = pika.BlockingConnection(self.params)
         #创建信道
