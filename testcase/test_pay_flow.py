@@ -21,8 +21,8 @@ class TestThirdPayBusiness:
         if res.json()["data"]["payStatus"] != "PAY_SUCCESS":
             raise Exception("第三方支付未回调，等待重试")
 
-    def test_pay_all_flow(self, global_token_headers):
-        headers = global_token_headers
+    def test_pay_all_flow(self, global_headers):
+        headers = global_headers
         data = pay_data
 
         with allure.step("1.创建商品订单"):
