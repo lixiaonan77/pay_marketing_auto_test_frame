@@ -1,0 +1,8 @@
+#用户签到业务场景数据
+sign: 
+  sign_tip:"每日签到可自动增加用户积分"
+sign_params: 
+  siginType:"daily"
+  deviceType:"android"
+# 签到后预期积分
+expect_score: 100

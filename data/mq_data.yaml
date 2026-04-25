@@ -1,0 +1,4 @@
+# MQ支付同步消息测试数据
+pay_mq_msg: 
+  pay_success: "PAY_SUCCESS"
+  msg_desc: "支付成功触发MQ同步订单&权益状态"

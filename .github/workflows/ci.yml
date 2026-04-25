@@ -1,0 +1,24 @@
+name: 自动化定时回归任务
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  auto_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取项目代码
+        uses: actions/checkout@v4
+
+      - name: 配置Python环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: 安装项目所有依赖
+        run: pip install -r requirements.txt
+
+      - name: 自动执行全部自动化用例
+        run: pytest testcase/ --alluredir=report/allure-results

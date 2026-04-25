@@ -1,0 +1,6 @@
+#抽奖业务核心规则
+lottery: 
+  prize_name:"iPhone 大奖"
+  stock_limit:1 #奖品库存仅1个
+  limit_month_day:30 #每30天只能中奖一次
+  prize_valid_day:30 #中奖之后有效期30天

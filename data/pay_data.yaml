@@ -1,0 +1,6 @@
+#支付下单业务数据
+order: 
+  goods_id:10086
+  Amount:29.9
+pay: 
+  pay_type:"alipay"
