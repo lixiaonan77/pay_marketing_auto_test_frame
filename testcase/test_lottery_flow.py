@@ -31,8 +31,8 @@ class TestIphoneLotteryRule:
         # 没查到中奖记录就抛异常，自动触发重试
         raise Exception("未查询到中奖记录，继续轮询")
 
-    def test_lottery_full_business(self, global_token_headers):
-        headers = global_token_headers
+    def test_lottery_full_business(self, global_headers):
+        headers = global_headers
         rule = lottery_data["lottery_rule"]
 
         with allure.step("1.校验iPhone大奖库存严格为1"):

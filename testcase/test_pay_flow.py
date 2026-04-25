@@ -22,7 +22,7 @@ class TestThirdPayBusiness:
             raise Exception("第三方支付未回调，等待重试")
 
     def test_pay_all_flow(self, global_headers):
-        headers = global_token_headers
+        headers = global_headers
         data = pay_data
 
         with allure.step("1.创建商品订单"):
