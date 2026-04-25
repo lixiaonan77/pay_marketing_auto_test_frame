@@ -1,0 +1,2 @@
+# pay_marketing_auto_test_frame
+七层企业级测试开发框架，覆盖营销活动+支付核心链路+MQ异步业务自动化测试
