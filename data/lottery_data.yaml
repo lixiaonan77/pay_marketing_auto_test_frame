@@ -1,5 +1,5 @@
 #抽奖业务核心规则
-lottery:  
+lottery_rule:  
   prize_name: "iPhone 大奖"
   stock_limit: 1 #奖品库存仅1个
   limit_month_day: 30 #每30天只能中奖一次

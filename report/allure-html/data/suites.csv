@@ -7,8 +7,8 @@
         4.消费完成自动更新订单状态、用户购买权益生效
         5.自动化校验MQ消息内容 & 业务状态同步无误
         ","0","test_pay_success_send_mq_sync_status","testcase","2026-04-26","broken","2026-04-26","TestPayMqSync","test_mq_pay_sync","",""
-"","0","test_pay_all_flow","testcase","2026-04-26","broken","2026-04-26","TestThirdPayBusiness","test_pay_flow","",""
 "","0","test_lottery_full_business","testcase","2026-04-26","broken","2026-04-26","TestIphoneLotteryRule","test_lottery_flow","",""
+"","0","test_pay_all_flow","testcase","2026-04-26","broken","2026-04-26","TestThirdPayBusiness","test_pay_flow","",""
 "
         业务流程：
         1.用户执行每日签到
