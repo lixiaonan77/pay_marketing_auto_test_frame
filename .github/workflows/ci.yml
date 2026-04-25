@@ -40,14 +40,16 @@ jobs:
         run: |
           for i in {1..15}; do
             nc -zv 127.0.0.1 5672 && break
-            echo "Waiting for RabbitMQ... $i/15"
+            echo "等待 RabbitMQ... $i/15"
             sleep 3
           done
 
-      - name: 执行自动化测试
+      - name: 执行自动化测试（Mock 登录模式）
+        env:
+          MOCK_LOGIN: 1          # 关键：跳过真实后端
         run: pytest testcase/ --alluredir=report/allure-results
 
-      - name: 上传测试报告（可选）
+      - name: 上传测试报告
         if: always()
         uses: actions/upload-artifact@v4
         with:

@@ -1,6 +1,11 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","0","test_pay_all_flow","testcase","2026-04-25","broken","2026-04-25","TestThirdPayBusiness","test_pay_flow","",""
-"","0","test_lottery_full_business","testcase","2026-04-25","broken","2026-04-25","TestIphoneLotteryRule","test_lottery_flow","",""
+"
+        业务流程：
+        1.用户执行每日签到
+        2.校验签到成功
+        3.查询积分，验证积分正常增加
+        ","0","test_user_sign_add_score","testcase","2026-04-26","broken","2026-04-26","TestSignBusiness","test_sign_flow","",""
+"","0","test_lottery_full_business","testcase","2026-04-26","broken","2026-04-26","TestIphoneLotteryRule","test_lottery_flow","",""
 "
         完整真实业务链路：
         1.第三方支付回调显示支付成功
@@ -8,10 +13,5 @@
         3.MQ消费者监听并消费消息
         4.消费完成自动更新订单状态、用户购买权益生效
         5.自动化校验MQ消息内容 & 业务状态同步无误
-        ","0","test_pay_success_send_mq_sync_status","testcase","2026-04-25","broken","2026-04-25","TestPayMqSync","test_mq_pay_sync","",""
-"
-        业务流程：
-        1.用户执行每日签到
-        2.校验签到成功
-        3.查询积分，验证积分正常增加
-        ","0","test_user_sign_add_score","testcase","2026-04-25","broken","2026-04-25","TestSignBusiness","test_sign_flow","",""
+        ","0","test_pay_success_send_mq_sync_status","testcase","2026-04-26","broken","2026-04-26","TestPayMqSync","test_mq_pay_sync","",""
+"","0","test_pay_all_flow","testcase","2026-04-26","broken","2026-04-26","TestThirdPayBusiness","test_pay_flow","",""

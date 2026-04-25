@@ -13,10 +13,10 @@ class TestIphoneLotteryRule:
 
     # 异步重试：轮询中奖记录、校验业务规则
     @async_retry()
-    def check_lottery_win_rule(self, headers):
+    def check_lottery_win_rule(self, headers,prize_name):
         rule = lottery_data["lottery_rule"]
         res = LotteryApi.get_win_record(headers)
-        win_list = res.json()["data"]["winList"]
+        win_list = res.json()["data"]["list"]
 
         # 遍历中奖记录，强校验所有需求规则
         for item in win_list:
@@ -31,8 +31,8 @@ class TestIphoneLotteryRule:
         # 没查到中奖记录就抛异常，自动触发重试
         raise Exception("未查询到中奖记录，继续轮询")
 
-    def test_lottery_full_business(self, global_headers):
-        headers = global_headers
+    def test_lottery_full_business(self, global_token_headers):
+        headers = global_token_headers
         rule = lottery_data["lottery_rule"]
 
         with allure.step("1.校验iPhone大奖库存严格为1"):

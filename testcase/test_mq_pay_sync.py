@@ -29,7 +29,7 @@ class TestPayMqSync:
         return consume_msg
 
 
-    def test_pay_success_send_mq_sync_status(self,global_headers):
+    def test_pay_success_send_mq_sync_status(self,global_token_headers):
         """
         完整真实业务链路：
         1.第三方支付回调显示支付成功
