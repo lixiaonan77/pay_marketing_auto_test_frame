@@ -4,7 +4,7 @@ from config.setting import env, login_user
 
 class LoginApi:
     #登录接口：全局获取token
-    @staticemethod
+    @staticmethod
     def login():
         url=f"{env['base_url']}/api/user/login"
         payload={

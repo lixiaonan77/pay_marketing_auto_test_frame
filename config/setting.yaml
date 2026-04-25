@@ -1,18 +1,19 @@
 #全局环境变量
-env: 
-  base_url:"https://test-api-project.com"
+env:
+  base_url: "https://test-api-project.com"
 
 #登录账号配置
-login_user: 
-  username:"test_user_01"
-  password:"123456"
+login_user:
+  username: "test_user_01"
+  password: "123456"
 
 #异步重试统一配置
-retry: 
-  max_num:5
-  wait_time:2
+retry:
+  max_num: 5
+  wait_time: 2
+
 #MQ配置
-mq: 
-  host:"127.0.0.1"
-  port:5672
-  queue_name:"pay_order_status_queue" #支付状态同步队列
+mq:
+  host: "127.0.0.1"
+  port: 5672
+  queue_name: "pay_order_status_queue" #支付状态同步队列

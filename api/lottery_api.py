@@ -1,4 +1,4 @@
-from config.http_request import http
+from common.http_request import http
 from config.setting import env
 class LotteryApi:
     #发起抽奖

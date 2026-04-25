@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent))
 import pytest
 from api.login_api import LoginApi
 #会话级别：整个项目运行只登录一次，所有用例共享token

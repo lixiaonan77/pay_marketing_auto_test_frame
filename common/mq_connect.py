@@ -8,12 +8,10 @@ MQ底层连接公共类
 class MqConnect:
     def __init__(self):
         #MQ连接参数
-        self.params=pika.ConnectionParameters(
-            host=mq["host"],
-            port=mq["port"]
-            )
-        #创建连接
-        self.connection=pika.Connection(self.params)
+        host = mq.get("host", "127.0.0.1")
+        port = mq.get("port", 5672)
+        self.params = pika.ConnectionParameters(host=host, port=port)
+        self.connection = pika.BlockingConnection(self.params)
         #创建信道
         self.channel=self.connection.channel()
         #声明队列(不存在自动创建)
