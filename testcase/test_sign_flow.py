@@ -17,12 +17,12 @@ class TestSignBusiness:
         headers=global_token_headers
         sign_params=sign_data["sign_params"]
         expect_score=sign_data["expect_score"]
-        with allule.step("1.用户发起每日签到操作"):
+        with allure.step("1.用户发起每日签到操作"):
             sign_res=SignApi.user_sign(headers=headers,params=sign_params)
             #断言签到接口正常
             assert sign_res.status_code == 200
             assert sign_res.json()["code"] == 200
-        with allule.step("2.查询用户积分，验证积分到账功能"):
+        with allure.step("2.查询用户积分，验证积分到账功能"):
             score_res=SignApi.get_user_score(headers)
             #断言查询接口正常，返回包含score字段，断言签到后总积分和预期中积分一致
             assert score_res.status_code == 200
