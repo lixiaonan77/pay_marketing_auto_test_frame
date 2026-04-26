@@ -5,4 +5,4 @@ sign_params:
   siginType:"daily"
   deviceType:"android"
 # 签到后预期积分
-expect_score: 100
+expect_score: 10
