@@ -13,5 +13,5 @@
         2.校验签到成功
         3.查询积分，验证积分正常增加
         ","0","test_user_sign_add_score","testcase","2026-04-26","broken","2026-04-26","TestSignBusiness","test_sign_flow","",""
-"","0","test_pay_all_flow","testcase","2026-04-26","broken","2026-04-26","TestThirdPayBusiness","test_pay_flow","",""
 "","0","test_lottery_full_business","testcase","2026-04-26","broken","2026-04-26","TestIphoneLotteryRule","test_lottery_flow","",""
+"","0","test_pay_all_flow","testcase","2026-04-26","broken","2026-04-26","TestThirdPayBusiness","test_pay_flow","",""
