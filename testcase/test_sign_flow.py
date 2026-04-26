@@ -23,7 +23,7 @@ class TestSignBusiness:
             assert sign_res.status_code == 200
             assert sign_res.json()["code"] == 200
         with allure.step("2.查询用户积分，验证积分到账功能"):
-            score_res=SignApi.get_user_score(headers)
+            score_res=SignApi.get_user_score(headers=headers)
             #断言查询接口正常，返回包含score字段，断言签到后总积分和预期中积分一致
             assert score_res.status_code == 200
             assert "score" in score_res.json()["data"]

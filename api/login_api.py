@@ -12,4 +12,4 @@ class LoginApi:
             "password":login_user["password"],
 
         }
-        return http.send("POST",url,json=payload)
+        return http.send("POST",url,params=payload)

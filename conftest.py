@@ -34,4 +34,5 @@ def global_token_headers():
         "Authorization": token,
         "Content-Type": "application/json"
     }
+    params=login_user
     return headers

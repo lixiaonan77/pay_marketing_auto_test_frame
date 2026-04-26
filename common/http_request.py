@@ -16,7 +16,7 @@ class HttpRequest:
             method=method,
             url=url,
             headers=headers,
-            json=json,
+            json=params,
             timeout=15
         )
         return res

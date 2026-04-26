@@ -14,14 +14,14 @@ class TestThirdPayBusiness:
 
     # 支付结果异步轮询重试
     @async_retry()
-    def check_pay_success(self, headers, order_id):
+    def check_pay_success(self, headers, params=order_id):
         res = PayApi.query_pay_status(headers, order_id)
         assert res.json()["code"] == 200
         # 支付未成功主动抛出异常，触发重试
         if res.json()["data"]["payStatus"] != "PAY_SUCCESS":
             raise Exception("第三方支付未回调，等待重试")
 
-    def test_pay_all_flow(self, global_token_headers):
+    def test_pay_all_flow(self, global_token_headers,params=data):
         headers = global_token_headers
         data = pay_data
 

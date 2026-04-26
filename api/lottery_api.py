@@ -10,7 +10,7 @@ class LotteryApi:
             # 模拟抽奖成功，返回中奖信息
             return MockResponse({"code": 200, "data": {"prize_name": "iPhone 大奖"}})
         url = f"{env['base_url']}/api/lottery/draw"
-        return http.send("POST", url, headers=headers, json=params)
+        return http.send("POST", url, headers=headers, params=params)
 
     # 查奖品库存
     @staticmethod
@@ -20,7 +20,7 @@ class LotteryApi:
             return MockResponse({"code": 200, "data": {"stock": 1}})
         url = f"{env['base_url']}/api/lottery/stock"
         payload = {"prize_name": prize_name}
-        return http.send("POST", url, headers=headers, json=payload)
+        return http.send("POST", url, headers=headers, params=payload)
 
     # 查中奖记录
     @staticmethod
@@ -29,4 +29,4 @@ class LotteryApi:
             # 模拟中奖记录
             return MockResponse({"code": 200, "data": {"records": []}})
         url = f"{env['base_url']}/api/lottery/record"
-        return http.send("GET", url, headers=headers, json=params)
+        return http.send("GET", url, headers=headers)

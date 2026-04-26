@@ -10,7 +10,7 @@ class SignApi:
             # 模拟签到成功，返回增加后的积分
             return MockResponse({"code": 200, "data": {"score": 10}})
         url = f"{env['base_url']}/api/user/sign"
-        return http.send("POST", url, headers=headers, json=params)
+        return http.send("POST", url, headers=headers, params=params)
 
     # 用户查询当前积分接口
     @staticmethod
@@ -20,4 +20,4 @@ class SignApi:
             return MockResponse({"code": 200, "data": {"score": 10}})
         url = f"{env['base_url']}/api/user/score"
         
-        return http.send("GET", url, headers=headers, json=params)
+        return http.send("GET", url, headers=headers)
