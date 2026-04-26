@@ -22,7 +22,7 @@ class TestIphoneLotteryRule:
         for item in win_list:
             if item["prizeName"] == rule["prize_name"]:
                 # 校验1：奖品库存只有1个
-                assert item["stock"] == rule["stock_num"]
+                assert item["stock"] == rule["stock_limit"]
                 # 校验2：30天只能中奖一次
                 assert item["limitDays"] == rule["limit_days"]
                 # 校验3：中奖有效期30天
@@ -37,7 +37,7 @@ class TestIphoneLotteryRule:
 
         with allure.step("1.校验iPhone大奖库存严格为1"):
             stock_res = LotteryApi.get_prize_stock(headers, rule["prize_name"])
-            assert stock_res.json()["data"]["stock"] == rule["stock_num"]
+            assert stock_res.json()["data"]["stock"] == rule["stock_limit"]
 
         with allure.step("2.用户发起抽奖"):
             LotteryApi.draw_lottery(headers)
