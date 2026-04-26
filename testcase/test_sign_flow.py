@@ -1,9 +1,11 @@
 import yaml
 import allure
 from api.sign_api import SignApi
+from utils.yaml_util import YamlUtil
+sign_data=YamlUtil.load_yaml("./data/sign_data.yaml")
 #读取签到测试数据
-with open("./data/sign_data.yaml","r",encoding="utf-8") as f:
-    sign_data=yaml.safe_load(f)
+#with open("./data/sign_data.yaml","r",encoding="utf-8") as f:
+#    sign_data=yaml.safe_load(f)
 @allure.feature("用户模块")
 @allure.story("每日签到+积分获取流程")
 class TestSignBusiness:

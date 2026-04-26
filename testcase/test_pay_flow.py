@@ -3,10 +3,12 @@ import allure
 from api.order_api import OrderApi
 from api.pay_api import PayApi
 from utils.retry_util import async_retry
+from utils.yaml_util import YamlUtil
+pay_data=YamlUtil.load_yaml("./data/pay_data.yaml")
 
 # 读取支付测试数据
-with open("./data/pay_data.yaml", "r", encoding="utf-8") as f:
-    pay_data = yaml.safe_load(f)
+#with open("./data/pay_data.yaml", "r", encoding="utf-8") as f:
+#    pay_data = yaml.safe_load(f)
 
 @allure.feature("支付中心模块")
 @allure.story("创建订单 + 唤起第三方支付 + 异步回调结果校验")

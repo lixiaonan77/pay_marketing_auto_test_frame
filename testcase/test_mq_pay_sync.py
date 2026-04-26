@@ -2,10 +2,11 @@ import yaml
 import allure
 from utils.mq_util import MqUtil
 from utils.retry_util import async_retry
-
+from utils.yaml_util import YamlUtil
+mq_data=YamlUtil.load_yaml("./data/mq_data.yaml")
 # 读取MQ测试数据
-with open("./data/mq_data.yaml","r",encoding="utf-8") as f:
-    mq_data = yaml.safe_load(f)
+#with open("./data/mq_data.yaml","r",encoding="utf-8") as f:
+#    mq_data = yaml.safe_load(f)
 
 @allure.feature("MQ消息队列模块")
 @allure.story("支付成功后MQ异步同步订单状态+用户权益生效")
