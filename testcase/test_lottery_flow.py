@@ -32,8 +32,8 @@ class TestIphoneLotteryRule:
         raise Exception("未查询到中奖记录，继续轮询")
 
     def test_lottery_full_business(self, global_token_headers):
-        rule_params = global_token_headers
-        params = lottery_data["lottery_rule"]
+        headers= global_token_headers
+        rule_params = lottery_data["lottery_rule"]
 
         with allure.step("1.校验iPhone大奖库存严格为1"):
             stock_res = LotteryApi.get_prize_stock(headers, rule_params["prize_name"])
