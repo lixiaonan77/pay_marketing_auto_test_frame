@@ -16,7 +16,7 @@ class TestIphoneLotteryRule:
     def check_lottery_win_rule(self, headers,prize_name):
         rule = lottery_data["lottery_rule"]
         res = LotteryApi.get_win_record(headers,prize_name)
-        win_list = res.json()["data"]["record"]
+        win_list = res.json()["data"]["records"]
 
         # 遍历中奖记录，强校验所有需求规则
         for item in win_list:
