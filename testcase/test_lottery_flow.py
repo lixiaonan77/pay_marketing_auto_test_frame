@@ -40,7 +40,7 @@ class TestIphoneLotteryRule:
             assert stock_res.json()["data"]["stock"] == rule["stock_limit"]
 
         with allure.step("2.用户发起抽奖"):
-            LotteryApi.draw_lottery(headers)
+            LotteryApi.start_lottery(headers)
 
         with allure.step("3.校验30天中奖限制 + 奖品有效期"):
             self.check_lottery_win_rule(headers)

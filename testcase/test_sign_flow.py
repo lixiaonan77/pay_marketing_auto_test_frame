@@ -18,7 +18,7 @@ class TestSignBusiness:
         sign_params=sign_data["sign_params"]
         expect_score=sign_data["expect_score"]
         with allure.step("1.用户发起每日签到操作"):
-            sign_res=SignApi.user_sign(headers=headers,json=sign_params)
+            sign_res=SignApi.user_sign(headers=headers,params=sign_params)
             #断言签到接口正常
             assert sign_res.status_code == 200
             assert sign_res.json()["code"] == 200
