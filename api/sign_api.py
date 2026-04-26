@@ -20,4 +20,4 @@ class SignApi:
             return MockResponse({"code": 200, "data": {"score": 10}})
         url = f"{env['base_url']}/api/user/score"
         
-        return http.send("GET", url, headers=headers)
+        return http.send("GET", url, headers=headers,params=params)
