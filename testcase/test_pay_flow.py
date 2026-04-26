@@ -14,8 +14,8 @@ class TestThirdPayBusiness:
 
     # 支付结果异步轮询重试
     @async_retry()
-    def check_pay_success(self, headers, params=order_info):
-        res = PayApi.query_pay_status(headers, order_info)
+    def check_pay_success(self, headers, params=pay_data):
+        res = PayApi.query_pay_status(headers, pay_data)
         assert res.json()["code"] == 200
         # 支付未成功主动抛出异常，触发重试
         if res.json()["data"]["payStatus"] != "PAY_SUCCESS":
