@@ -21,7 +21,7 @@ class TestThirdPayBusiness:
         if res.json()["data"]["payStatus"] != "PAY_SUCCESS":
             raise Exception("第三方支付未回调，等待重试")
 
-    def test_pay_all_flow(self, global_token_headers,params=data):
+    def test_pay_all_flow(self, global_token_headers,params=pay_data):
         headers = global_token_headers
         data = pay_data
 
