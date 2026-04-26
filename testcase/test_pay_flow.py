@@ -4,7 +4,7 @@ from api.order_api import OrderApi
 from api.pay_api import PayApi
 from utils.retry_util import async_retry
 from utils.yaml_util import YamlUtil
-pay_data=YamlUtil.load_yaml("/pay_data.yaml")
+pay_data=YamlUtil.load_yaml("pay_data.yaml")
 
 # 读取支付测试数据
 #with open("./data/pay_data.yaml", "r", encoding="utf-8") as f:

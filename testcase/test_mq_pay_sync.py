@@ -3,7 +3,7 @@ import allure
 from utils.mq_util import MqUtil
 from utils.retry_util import async_retry
 from utils.yaml_util import YamlUtil
-mq_data=YamlUtil.load_yaml("/mq_data.yaml")
+mq_data=YamlUtil.load_yaml("mq_data.yaml")
 # 读取MQ测试数据
 #with open("./data/mq_data.yaml","r",encoding="utf-8") as f:
 #    mq_data = yaml.safe_load(f)
