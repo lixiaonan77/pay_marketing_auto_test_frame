@@ -31,7 +31,7 @@ class TestThirdPayBusiness:
                 goods_id=data["order_info"]["goods_id"],
                 amount=data["order_info"]["goods_amount"]
             )
-            order_id = order_res.json()["data"]["goods_id"]
+            order_id = order_res.json()["data"]["orderId"]
             assert order_id
 
         with allure.step("2.调用第三方支付宝支付"):
