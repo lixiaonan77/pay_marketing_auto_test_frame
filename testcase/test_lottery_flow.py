@@ -8,7 +8,7 @@ from utils.yaml_util import YamlUtil
 # 读取抽奖限制规则
 #with open("./data/lottery_data.yaml", "r", encoding="utf-8") as f:
 #    lottery_data = yaml.safe_load(f)
-lottery_data=YamlUtil.load_yaml("./data/lottery_data.yaml")
+lottery_data=YamlUtil.load_yaml("/lottery_data.yaml")
 @allure.feature("抽奖活动模块")
 @allure.story("iPhone大奖｜库存唯一 + 30天限中奖1次 + 有效期30天")
 class TestIphoneLotteryRule:
