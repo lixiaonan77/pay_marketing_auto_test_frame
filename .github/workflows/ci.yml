@@ -10,7 +10,6 @@ jobs:
   auto_test:
     runs-on: ubuntu-latest
 
-    # RabbitMQ 服务容器
     services:
       rabbitmq:
         image: rabbitmq:3-management
@@ -23,19 +22,15 @@ jobs:
           --health-retries 5
 
     steps:
-      - name: 拉取项目代码
-        uses: actions/checkout@v4
-
-      - name: 配置 Python 环境
+      - uses: actions/checkout@v4
+      - name: 配置 Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-
-      - name: 安装项目依赖
+      - name: 安装依赖
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-
       - name: 等待 RabbitMQ 就绪
         run: |
           for i in {1..15}; do
@@ -43,14 +38,12 @@ jobs:
             echo "等待 RabbitMQ... $i/15"
             sleep 3
           done
-
-      - name: 执行自动化测试（Mock 登录模式）
+      - name: 执行测试（全量 Mock）
         env:
-          MOCK_LOGIN: 1          # 关键：跳过真实后端
-	  MOCK_API: 1            # 所有业务 API 返回 Mock 数据
-	run: pytest testcase/ --alluredir=report/allure-results
-
-      - name: 上传测试报告
+          MOCK_LOGIN: 1
+          MOCK_API: 1
+        run: pytest testcase/ --alluredir=report/allure-results
+      - name: 上传报告
         if: always()
         uses: actions/upload-artifact@v4
         with:
