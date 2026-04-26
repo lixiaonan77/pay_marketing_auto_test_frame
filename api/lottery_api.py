@@ -26,5 +26,5 @@ class LotteryApi:
          if MOCK_MODE:
             # 模拟中奖记录
             return MockResponse({"code": 200, "data": {"records": []}})
-        url=f"{env['base_url‘]}/api/lottery/record"
+        url=f"{env['base_url']}/api/lottery/record"
         return http.send("GET",url,headers=headers,json=params)
